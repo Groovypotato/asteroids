@@ -20,6 +20,7 @@ def main():
         g_color = (12,12,12)
         screen.fill(g_color)
         player.draw(screen)
+        player.update(dt)
         pygame.display.flip() 
         dt = (g_clock.tick(60) / 1000)
         
