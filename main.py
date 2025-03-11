@@ -9,6 +9,9 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable,drawable)
     dt = 0 
     g_clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -19,8 +22,8 @@ def main():
                 return
         g_color = (12,12,12)
         screen.fill(g_color)
-        player.draw(screen)
-        player.update(dt)
+        drawable.draw(screen)
+        updatable.update(dt)
         pygame.display.flip() 
         dt = (g_clock.tick(60) / 1000)
         
