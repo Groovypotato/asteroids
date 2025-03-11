@@ -5,7 +5,7 @@ from constants import *
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x,y,radius)
-        self.asteroid_color = (255,255,255)
+        self.asteroid_color = (51,51,51)
 
     def draw(self, screen):
         pygame.draw.circle(screen, self.asteroid_color,(self.position.x,self.position.y),self.radius )
